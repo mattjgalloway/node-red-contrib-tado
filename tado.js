@@ -24,16 +24,16 @@ module.exports = function(RED) {
 
             var client = new Tado();
             client.login(node.home.username, node.home.password)
-                .then((success) => {
+                .then(function(success) {
                     return client.api(node.path);
                 })
-                .then((result) => {
+                .then(function(result) {
                     var msg = {};
                     msg.payload = result;
                     node.send(msg);
                     node.status({});
                 })
-                .catch((err) => {
+                .catch(function(err) {
                     node.error(err);
                     node.status({ fill: "red", shape: "dot", text: "error" });
                 });
