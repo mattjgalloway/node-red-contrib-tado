@@ -1,28 +1,32 @@
 {
-"name" : "node-red-contrib-tado",
-"version" : "0.1.0",
-"description" : "Node-RED node to interface with Tado Smart Thermostats",
-"dependencies": {
-  "node-tado " : "^0.0.2"
-},
-"engines":
-{
-  "node": ">=5.0.0"
-},
-"repository" :
-  { "type" : "git"
-  , "url" : "https://github.com/mattjgalloway/node-red-contrib-tado.git"
-},
-"license": "MIT",
-"keywords": [ "node-red", "tado", "heating", "thermostat"],
-"node-red" : {
-  "nodes": {
-    "tado": "tado.js"
+  "name": "node-red-contrib-tado",
+  "version": "0.1.1",
+  "description": "Node-RED node to interface with Tado Smart Thermostats",
+  "dependencies": {
+    "node-tado ": "^0.0.2"
+  },
+  "engines": {
+    "node": ">=5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattjgalloway/node-red-contrib-tado.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node-red",
+    "tado",
+    "heating",
+    "thermostat"
+  ],
+  "node-red": {
+    "nodes": {
+      "tado": "tado.js"
+    }
+  },
+  "author": {
+    "name": "Matt Galloway",
+    "email": "matt@galloway.me.uk",
+    "url": "www.galloway.me.uk"
   }
-},
-"author": {
-  "name": "Matt Galloway",
-  "email": "matt@galloway.me.uk",
-  "url": "www.galloway.me.uk"
-}
 }
