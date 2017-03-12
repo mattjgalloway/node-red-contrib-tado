@@ -1,0 +1,56 @@
+<script type="text/javascript">
+  RED.nodes.registerType("tado-home", {
+    category: "config",
+    defaults: {
+      username: { value: "", required: true },
+      password: { value: "", required: true },
+    },
+    label: function() {
+      return "Tado login: " + this.username;
+    },
+  });
+</script>
+
+<script type="text/x-red" data-template-name="tado-home">
+    <div class="form-row">
+        <label for="node-config-input-username"><i class="fa fa-hashtag"></i> Username</label>
+        <input type="text" id="node-config-input-username" />
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-password"><i class="fa fa-key"></i> Password</label>
+        <input type="text" id="node-config-input-password">
+    </div>
+</script>
+
+<script type="text/javascript">
+  RED.nodes.registerType("tado", {
+    category: "input",
+    color: "#ffcc66",
+    defaults: {
+      home: { value:"", type: "tado-home", required: true },
+      interval: { value: 900, required: true, validate: RED.validators.number() },
+      path: { value:"", required: true },
+    },
+    inputs: 0,
+    outputs: 1,
+    icon: "feed.png",
+    label: function() {
+      return "Tado";
+    }
+  });
+</script>
+
+<script type="text/x-red" data-template-name="tado">
+    <div class="form-row">
+        <label for="node-input-home"><i class="fa fa-globe"></i> Home</label>
+        <input type="text" id="node-input-home" />
+    </div>
+    <div class="form-row">
+        <label for="node-input-command"><i class="fa fa-terminal"></i> Path</label>
+        <input type="text" id="node-input-path" />
+    </div>
+    <div class="form-row">
+        <label for="node-input-interval"><i class="fa fa-clock-o"></i> Interval (s)</label>
+        <input type="text" id="node-input-interval" />
+    </div>
+</script>
