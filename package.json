@@ -3,7 +3,7 @@
   "version": "0.1.4",
   "description": "Node-RED node to interface with Tado Smart Thermostats",
   "dependencies": {
-    "node-tado": "mattjgalloway/node-tado"
+    "node-tado": "github:mattjgalloway/node-tado"
   },
   "engines": {
     "node": ">=5.0.0"
