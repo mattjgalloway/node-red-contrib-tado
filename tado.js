@@ -39,7 +39,7 @@ module.exports = function(RED) {
                     node.status({});
                 })
                 .catch(function(err) {
-                    node.error(err);
+                    node.error(JSON.stringify(err));
                     node.status({ fill: "red", shape: "dot", text: "error" });
                 });
         }
