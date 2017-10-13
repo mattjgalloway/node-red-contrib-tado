@@ -7,6 +7,7 @@ module.exports = function(RED) {
 
         this.username = n.username;
         this.password = n.password;
+        this.client = new Tado();
     }
     RED.nodes.registerType("tado-home", TadoHome);
 
@@ -18,15 +19,14 @@ module.exports = function(RED) {
         node.interval = n.interval;
         node.path = n.path;
         node.timer = {};
-        node.client = new Tado();
         
         function fetchData() {
             node.timer = setTimeout(fetchData, node.interval * 1000);
 
-            var client = node.client;
+            var client = node.home.client;
             var first = client.token
               ? new Promise(function(resolve, reject) { resolve(true) } )
-              : node.client.login(node.home.username, node.home.password);
+              : client.login(node.home.username, node.home.password);
 
             first
                 .then(function(success) {
